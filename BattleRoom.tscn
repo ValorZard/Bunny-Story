@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://Enemy.gd" type="Script" id=3]
 
 [node name="Root" type="Spatial"]
 
@@ -15,10 +17,12 @@ transform = Transform( 1, 0, 0, 0, 0.986182, 0.165667, 0, -0.165667, 0.986182, 0
 [node name="Player" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.58094, 0.619985, 0 )
 texture = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Enemy" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.58773, 0.562827, 0 )
 texture = ExtResource( 1 )
+script = ExtResource( 3 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
@@ -36,33 +40,43 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Control/BattlePanel"]
+[node name="PlayerHealthText" type="Label" parent="Control/BattlePanel"]
 margin_left = 17.818
 margin_top = 25.8361
 margin_right = 57.818
 margin_bottom = 39.8361
 text = "Health: 10/10"
 
-[node name="Label2" type="Label" parent="Control/BattlePanel"]
-margin_left = 182.634
-margin_top = 27.6179
-margin_right = 222.634
-margin_bottom = 41.6179
+[node name="PlayerManaText" type="Label" parent="Control/BattlePanel"]
+margin_left = 184.416
+margin_top = 24.9452
+margin_right = 263.416
+margin_bottom = 38.9452
 text = "Mana: 10/10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label3" type="Label" parent="Control/BattlePanel"]
-margin_left = 500.995
-margin_top = 25.2363
-margin_right = 540.995
-margin_bottom = 39.2363
-text = "Coins: 0/10"
+[node name="MoneyText" type="Label" parent="Control/BattlePanel"]
+margin_left = 327.27
+margin_top = 26.1272
+margin_right = 399.27
+margin_bottom = 40.1272
+text = "Coins: 0"
 
-[node name="Label4" type="Label" parent="Control/BattlePanel"]
-margin_left = 702.919
-margin_top = 19.5998
-margin_right = 742.919
-margin_bottom = 33.5998
-text = "Stars: 0/10"
+[node name="LevelText" type="Label" parent="Control/BattlePanel"]
+margin_left = 416.938
+margin_top = 27.071
+margin_right = 488.938
+margin_bottom = 41.071
+text = "Level: 1"
+
+[node name="EnemyHealthText" type="Label" parent="Control/BattlePanel"]
+margin_left = 706.483
+margin_top = 98.8898
+margin_right = 832.483
+margin_bottom = 112.89
+text = "Enemy Health: 0/10"
 
 [node name="CharacterPanel" type="Panel" parent="Control"]
 margin_left = 54.0
@@ -73,7 +87,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="Control/CharacterPanel"]
+[node name="AttackButton" type="Button" parent="Control/CharacterPanel"]
 margin_left = 24.0
 margin_top = 27.0
 margin_right = 101.0
@@ -83,7 +97,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button2" type="Button" parent="Control/CharacterPanel"]
+[node name="MagicButton" type="Button" parent="Control/CharacterPanel"]
 margin_left = 138.551
 margin_top = 27.0
 margin_right = 215.551
@@ -93,16 +107,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button3" type="Button" parent="Control/CharacterPanel"]
+[node name="DefendButton" type="Button" parent="Control/CharacterPanel"]
 margin_left = 25.0
 margin_top = 79.0
 margin_right = 99.0
 margin_bottom = 106.0
 text = "Defend"
 
-[node name="Button4" type="Button" parent="Control/CharacterPanel"]
+[node name="SkipButton" type="Button" parent="Control/CharacterPanel"]
 margin_left = 138.0
 margin_top = 76.0
 margin_right = 217.0
 margin_bottom = 104.0
 text = "Skip"
+
+[connection signal="pressed" from="Control/CharacterPanel/AttackButton" to="Player" method="_on_AttackButton_pressed"]
+[connection signal="pressed" from="Control/CharacterPanel/MagicButton" to="Player" method="_on_MagicButton_pressed"]
+[connection signal="pressed" from="Control/CharacterPanel/DefendButton" to="Player" method="_on_DefendButton_pressed"]
+[connection signal="pressed" from="Control/CharacterPanel/SkipButton" to="Player" method="_on_SkipButton_pressed"]
