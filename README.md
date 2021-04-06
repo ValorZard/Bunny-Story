@@ -1,3 +1,17 @@
+# Bunny Story (WIP)
+
+*Title Pending*
+
+A Game made with the help of the University of California, Irvine Video Game Development Club.
+
+Project Lead/Art Designer/Narrative Lead: Sabella "Paradoxic" Hunter
+
+Producer/Programming Lead/Game Designer: Srayan "ValorZard" Jana
+
+Still undecided on wheatear to continue coding in c# or GDScript.
+
+
+
 # Breakdown of code
 
 

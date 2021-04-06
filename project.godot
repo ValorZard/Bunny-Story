@@ -8,11 +8,21 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Sprite3D",
+"class": "Character",
+"language": "GDScript",
+"path": "res://Scripts/Character.gd"
+} ]
+_global_script_class_icons={
+"Character": ""
+}
+
 [application]
 
 config/name="Paper_Bunny"
-run/main_scene="res://BattleRoom.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://Scenes/BattleRoom.tscn"
+config/icon="res://Sprites/icon.png"
 
 [physics]
 
