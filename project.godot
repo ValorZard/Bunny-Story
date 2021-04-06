@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "Attack",
+"language": "GDScript",
+"path": "res://Scripts/Attack.gd"
+}, {
 "base": "Sprite3D",
 "class": "Character",
 "language": "GDScript",
 "path": "res://Scripts/Character.gd"
 } ]
 _global_script_class_icons={
+"Attack": "",
 "Character": ""
 }
 

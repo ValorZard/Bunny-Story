@@ -10,7 +10,7 @@ Producer/Programming Lead/Game Designer: Srayan "ValorZard" Jana
 
 Still undecided on wheatear to continue coding in c# or GDScript.
 
-
+Inspired by Paper Mario and this: https://github.com/GDQuest/godot-open-rpg
 
 # Breakdown of code
 
@@ -35,3 +35,9 @@ Both have attacks and spells they can do
 Experience points
 
 Level (maybe?)
+
+
+
+Attacks and Spells are both Objects, and they exist in an array. 
+
+Spells inherit data from Attacks.
