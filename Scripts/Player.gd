@@ -1,9 +1,13 @@
+"""
+Description
+
+Contributors:
+	Jacob Singleton - Initial implementation.
+"""
+
+
 extends Sprite3D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 var health : int = 10
 var max_health : int = 10
@@ -15,9 +19,9 @@ var coins : int = 0
 
 var level : int = 1
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 func update_ui():
@@ -31,8 +35,16 @@ func _process(delta):
 	update_ui()
 
 
+"""
+Called when the attack button is pressed.
+Temporarily acts like a Jump Attack.
+"""
 func _on_AttackButton_pressed():
-	get_parent().get_node("Enemy").health -= 1
+	if not $JumpAnimation.is_playing():
+		$JumpAnimation.queue("WalkUp")
+		$JumpAnimation.queue("JumpOn")
+		$JumpAnimation.queue("JumpOff")
+		$JumpAnimation.queue("WalkBack")
 
 
 func _on_MagicButton_pressed():

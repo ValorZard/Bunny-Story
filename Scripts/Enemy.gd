@@ -19,3 +19,15 @@ func update_ui():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	update_ui()
+
+
+"""
+Called when the attack button is pressed.
+Temporarily acts like a Jump Attack.
+"""
+func _on_AttackButton_pressed():
+	if not $JumpSquish.is_playing():
+		$JumpSquish.queue("JumpSquish")
+		$JumpSquish.queue("JumpUnsquish")
+	
+	get_parent().get_node("Enemy").health -= 5

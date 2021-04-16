@@ -1,10 +1,94 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Sprites/icon.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/BattleRoom.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=5]
+resource_name = "JumpOff"
+length = 0.45
+step = 0.05
+tracks/0/type = "transform"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 1.5, 0.8, 0, 0, 0, 0, 1, 1, 1, 1, 0.05, 1, 1.45, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0.1, 1, 1.35, 1.15, 0, 0, 0, 0, 1, 1, 1, 1, 0.15, 1, 1.25, 1.25, 0, 0, 0, 0, 1, 1, 1, 1, 0.2, 1, 1.1, 1.3, 0, 0, 0, 0, 1, 1, 1, 1 )
+tracks/1/type = "transform"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = PoolRealArray( 0.2, 1, 1.1, 1.3, 0, 0, 0, 0, 1, 1, 1, 1, 0.25, 1, 1, 1.25, 0, 0, 0, 0, 1, 1, 1, 1, 0.3, 1, 0.9, 1.15, 0, 0, 0, 0, 1, 1, 1, 1, 0.35, 1, 0.84, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0.4, 1, 0.77, 0.8, 0, 0, 0, 0, 1, 1, 1, 1, 0.45, 1, 0.7, 0.5, 0, 0, 0, 0, 1, 1, 1, 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "JumpOn"
+length = 0.7
+step = 0.05
+tracks/0/type = "transform"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0.7, 0.5, 0, 0, 0, 0, 1, 1, 1, 1, 0.05, 1, 0.73, 0.9, 0, 0, 0, 0, 1, 1, 1, 1, 0.1, 1, 0.77, 1.25, 0, 0, 0, 0, 1, 1, 1, 1, 0.15, 1, 0.83, 1.55, 0, 0, 0, 0, 1, 1, 1, 1, 0.2, 1, 0.88, 1.8, 0, 0, 0, 0, 1, 1, 1, 1, 0.25, 1, 0.94, 1.95, 0, 0, 0, 0, 1, 1, 1, 1, 0.3, 1, 1, 2.05, 0, 0, 0, 0, 1, 1, 1, 1, 0.35, 1, 1.1, 2.1, 0, 0, 0, 0, 1, 1, 1, 1 )
+tracks/1/type = "transform"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = PoolRealArray( 0.35, 1, 1.1, 2.1, 0, 0, 0, 0, 1, 1, 1, 1, 0.4, 1, 1.2, 2.05, 0, 0, 0, 0, 1, 1, 1, 1, 0.45, 1, 1.26, 1.95, 0, 0, 0, 0, 1, 1, 1, 1, 0.5, 1, 1.32, 1.8, 0, 0, 0, 0, 1, 1, 1, 1, 0.55, 1, 1.37, 1.55, 0, 0, 0, 0, 1, 1, 1, 1, 0.6, 1, 1.43, 1.25, 0, 0, 0, 0, 1, 1, 1, 1, 0.65, 1, 1.47, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0.7, 1, 1.5, 0.8, 0, 0, 0, 0, 1, 1, 1, 1 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "WalkBack"
+length = 0.5
+tracks/0/type = "transform"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0.7, 0.5, 0, 0, 0, 0, 1, 1, 1, 1, 0.5, 1, -1.5, 0.5, 0, 0, 0, 0, 1, 1, 1, 1 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "WalkUp"
+length = 0.5
+tracks/0/type = "transform"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -1.5, 0.5, 0, 0, 0, 0, 1, 1, 1, 1, 0.5, 1, 0.7, 0.5, 0, 0, 0, 0, 1, 1, 1, 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "JumpSquish"
+length = 1.2
+tracks/0/type = "transform"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 1.5, 0.5, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 0, 0, 0, 0, 1, 1, 1, 1, 1.2, 1, 1.5, 0.3, 0, 0, 0, 0, 1, 1, 0.57, 1 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "JumpUnsquish"
+length = 1.5
+tracks/0/type = "transform"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0.5, 1, 1.5, 0.3, 0, 0, 0, 0, 1, 1, 0.57, 1, 1.5, 1, 1.5, 0.5, 0, 0, 0, 0, 1, 1, 1, 1 )
 
 [node name="Root" type="Spatial"]
+script = ExtResource( 4 )
 
 [node name="CSGBox" type="CSGBox" parent="."]
 width = 7.5
@@ -15,14 +99,24 @@ depth = 7.5
 transform = Transform( 1, 0, 0, 0, 0.986182, 0.165667, 0, -0.165667, 0.986182, 0, 2.26039, 5.56684 )
 
 [node name="Player" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.58094, 0.619985, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, 0 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
+[node name="JumpAnimation" type="AnimationPlayer" parent="Player"]
+anims/JumpOff = SubResource( 5 )
+anims/JumpOn = SubResource( 2 )
+anims/WalkBack = SubResource( 6 )
+anims/WalkUp = SubResource( 4 )
+
 [node name="Enemy" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.58773, 0.562827, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 0 )
 texture = ExtResource( 1 )
 script = ExtResource( 3 )
+
+[node name="JumpSquish" type="AnimationPlayer" parent="Enemy"]
+anims/JumpSquish = SubResource( 3 )
+anims/JumpUnsquish = SubResource( 7 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
@@ -46,6 +140,9 @@ margin_top = 25.8361
 margin_right = 57.818
 margin_bottom = 39.8361
 text = "Health: 10/10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PlayerManaText" type="Label" parent="Control/BattlePanel"]
 margin_left = 184.416
@@ -121,7 +218,113 @@ margin_right = 217.0
 margin_bottom = 104.0
 text = "Skip"
 
+[node name="Control2" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattlePanel" type="Panel" parent="Control2"]
+margin_left = 52.8252
+margin_top = 11.7986
+margin_right = 946.825
+margin_bottom = 149.799
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerHealthText" type="Label" parent="Control2/BattlePanel"]
+margin_left = 17.818
+margin_top = 25.8361
+margin_right = 57.818
+margin_bottom = 39.8361
+text = "Health: 10/10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerManaText" type="Label" parent="Control2/BattlePanel"]
+margin_left = 184.416
+margin_top = 24.9452
+margin_right = 263.416
+margin_bottom = 38.9452
+text = "Mana: 10/10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoneyText" type="Label" parent="Control2/BattlePanel"]
+margin_left = 327.27
+margin_top = 26.1272
+margin_right = 399.27
+margin_bottom = 40.1272
+text = "Coins: 0"
+
+[node name="LevelText" type="Label" parent="Control2/BattlePanel"]
+margin_left = 416.938
+margin_top = 27.071
+margin_right = 488.938
+margin_bottom = 41.071
+text = "Level: 1"
+
+[node name="EnemyHealthText" type="Label" parent="Control2/BattlePanel"]
+margin_left = 706.483
+margin_top = 98.8898
+margin_right = 832.483
+margin_bottom = 112.89
+text = "Enemy Health: 0/10"
+
+[node name="CharacterPanel" type="Panel" parent="Control2"]
+margin_left = 54.0
+margin_top = 182.0
+margin_right = 303.0
+margin_bottom = 312.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttackButton" type="Button" parent="Control2/CharacterPanel"]
+margin_left = 24.0
+margin_top = 27.0
+margin_right = 101.0
+margin_bottom = 57.0
+text = "Attack"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MagicButton" type="Button" parent="Control2/CharacterPanel"]
+margin_left = 138.551
+margin_top = 27.0
+margin_right = 215.551
+margin_bottom = 57.0
+text = "Magic"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DefendButton" type="Button" parent="Control2/CharacterPanel"]
+margin_left = 25.0
+margin_top = 79.0
+margin_right = 99.0
+margin_bottom = 106.0
+text = "Defend"
+
+[node name="SkipButton" type="Button" parent="Control2/CharacterPanel"]
+margin_left = 138.0
+margin_top = 76.0
+margin_right = 217.0
+margin_bottom = 104.0
+text = "Skip"
+
 [connection signal="pressed" from="Control/CharacterPanel/AttackButton" to="Player" method="_on_AttackButton_pressed"]
+[connection signal="pressed" from="Control/CharacterPanel/AttackButton" to="Enemy" method="_on_AttackButton_pressedd"]
 [connection signal="pressed" from="Control/CharacterPanel/MagicButton" to="Player" method="_on_MagicButton_pressed"]
 [connection signal="pressed" from="Control/CharacterPanel/DefendButton" to="Player" method="_on_DefendButton_pressed"]
 [connection signal="pressed" from="Control/CharacterPanel/SkipButton" to="Player" method="_on_SkipButton_pressed"]
+[connection signal="pressed" from="Control2/CharacterPanel/AttackButton" to="Player" method="_on_AttackButton_pressed"]
+[connection signal="pressed" from="Control2/CharacterPanel/AttackButton" to="Enemy" method="_on_AttackButton_pressed"]
+[connection signal="pressed" from="Control2/CharacterPanel/MagicButton" to="Player" method="_on_MagicButton_pressed"]
+[connection signal="pressed" from="Control2/CharacterPanel/DefendButton" to="Player" method="_on_DefendButton_pressed"]
+[connection signal="pressed" from="Control2/CharacterPanel/SkipButton" to="Player" method="_on_SkipButton_pressed"]
