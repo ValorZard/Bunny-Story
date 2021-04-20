@@ -534,13 +534,6 @@ tracks/3/keys = {
 [node name="root" type="Node2D"]
 position = Vector2( 1.33478, 9.34387 )
 
-[node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Leg L" type="Sprite" parent="."]
 position = Vector2( 81.1962, 110.574 )
 rotation = -0.02354
