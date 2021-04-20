@@ -25,12 +25,12 @@ func _ready():
 
 
 func update_ui():
-	get_parent().get_node("BattleMain/BattlePanel/PlayerHealthText").text = "Health: " + str(health) + "/" + str(max_health)
-	get_parent().get_node("BattleMain/BattlePanel/PlayerManaText").text = "Mana: " + str(mana) + "/" + str(max_health)
-	get_parent().get_node("BattleMain/BattlePanel/MoneyText").text = "Coins: " + str(coins)
-	get_parent().get_node("BattleMain/BattlePanel/LevelText").text = "Level: " + str(level)
+	get_parent().get_node("BattleUI/BattlePanel/PlayerHealthText").text = "Health: " + str(health) + "/" + str(max_health)
+	get_parent().get_node("BattleUI/BattlePanel/PlayerManaText").text = "Mana: " + str(mana) + "/" + str(max_health)
+	get_parent().get_node("BattleUI/BattlePanel/MoneyText").text = "Coins: " + str(coins)
+	get_parent().get_node("BattleUI/BattlePanel/LevelText").text = "Level: " + str(level)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	update_ui()
 

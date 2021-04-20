@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Scenes/BattleRoom.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/UIs/BattleUI.tscn" type="PackedScene" id=5]
 
 [node name="BattleRoom" type="Spatial"]
 script = ExtResource( 4 )
@@ -13,5 +12,3 @@ depth = 7.5
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.986182, 0.165667, 0, -0.165667, 0.986182, 0, 2.26039, 5.56684 )
-
-[node name="BattleMain" parent="." instance=ExtResource( 5 )]
