@@ -14,8 +14,6 @@ var battle_ui: Node = preload("res://Scenes/UIs/BattleUI.tscn").instance()
 var player: Node = preload("res://Scenes/Player.tscn").instance()
 var enemy:  Node = preload("res://Scenes/Enemy.tscn").instance()
 
-var shield: Node = preload("res://Scenes/Shield.tscn").instance()
-
 
 func _ready():
 	add_child(battle_ui)
