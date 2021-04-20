@@ -1,11 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene format=2]
 
-[ext_resource path="res://Scenes/UIs/BattleMainUI.gd" type="Script" id=1]
-
-[node name="BattleMain" type="Control"]
+[node name="BattleUI" type="Control"]
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

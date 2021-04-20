@@ -3,7 +3,7 @@
 [ext_resource path="res://Sprites/icon.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=2]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=1]
 length = 1.2
 tracks/0/type = "transform"
 tracks/0/path = NodePath(".")
@@ -13,7 +13,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = PoolRealArray( 0, 1, 1.5, 0.5, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 0, 0, 0, 0, 1, 1, 1, 1, 1.2, 1, 1.5, 0.3, 0, 0, 0, 0, 1, 1, 0.57, 1 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 resource_name = "JumpUnsquish"
 length = 1.4
 tracks/0/type = "transform"
@@ -30,5 +30,5 @@ texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="JumpSquish" type="AnimationPlayer" parent="."]
-anims/JumpSquish = SubResource( 5 )
-anims/JumpUnsquish = SubResource( 6 )
+anims/JumpSquish = SubResource( 1 )
+anims/JumpUnsquish = SubResource( 2 )

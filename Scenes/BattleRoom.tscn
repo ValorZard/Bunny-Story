@@ -1,11 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/BattleRoom.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/UIs/BattleMainUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/UIs/BattleUI.tscn" type="PackedScene" id=5]
 
-[node name="Root" type="Spatial"]
+[node name="BattleRoom" type="Spatial"]
 script = ExtResource( 4 )
 
 [node name="CSGBox" type="CSGBox" parent="."]
@@ -15,10 +13,5 @@ depth = 7.5
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.986182, 0.165667, 0, -0.165667, 0.986182, 0, 2.26039, 5.56684 )
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, 0 )
-
-[node name="Enemy" parent="." instance=ExtResource( 2 )]
 
 [node name="BattleMain" parent="." instance=ExtResource( 5 )]
