@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Sprites/icon.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/test_bunny.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "JumpOff"
@@ -73,3 +74,13 @@ anims/JumpOff = SubResource( 1 )
 anims/JumpOn = SubResource( 2 )
 anims/WalkBack = SubResource( 3 )
 anims/WalkUp = SubResource( 4 )
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 100, 200 )
+transparent_bg = true
+usage = 0
+render_target_v_flip = true
+
+[node name="bunny" parent="Viewport" instance=ExtResource( 3 )]
+position = Vector2( 60, 100 )
+scale = Vector2( 0.2, 0.2 )

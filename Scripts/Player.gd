@@ -19,9 +19,15 @@ var coins : int = 0
 
 var level : int = 1
 
-
 func _ready():
-	pass
+	# Clear the viewport.
+	var viewport = $Viewport
+	$Viewport.set_clear_mode(Viewport.CLEAR_MODE_ONLY_NEXT_FRAME)
+	# Let two frames pass to make sure the vieport is captured.
+	yield(get_tree(), "idle_frame")
+	yield(get_tree(), "idle_frame")
+	# Retrieve the texture and set it to the viewport quad.
+	texture  = viewport.get_texture()
 
 
 func update_ui():
