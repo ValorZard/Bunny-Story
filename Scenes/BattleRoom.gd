@@ -14,6 +14,8 @@ var battle_ui: Node = preload("res://Scenes/UIs/BattleUI.tscn").instance()
 var player: Node = preload("res://Scenes/Player.tscn").instance()
 var enemy:  Node = preload("res://Scenes/Enemy.tscn").instance()
 
+var shield: Node = preload("res://Scenes/Shield.tscn").instance()
+
 
 func _ready():
 	add_child(battle_ui)
@@ -23,8 +25,9 @@ func _ready():
 	
 	battle_ui.get_node("CharacterPanel/AttackButton").connect("pressed", player, "play_jump_animation")
 	battle_ui.get_node("CharacterPanel/AttackButton").connect("pressed", enemy, "play_squish_animation")
+	
+	battle_ui.get_node("CharacterPanel/DefendButton").connect("pressed", player, "raise_shield")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
