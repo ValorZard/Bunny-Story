@@ -1,0 +1,42 @@
+[gd_scene format=2]
+
+[node name="HealthManaBar" type="Node"]
+
+[node name="BackgroundPanel" type="Panel" parent="."]
+margin_left = 63.1021
+margin_top = 95.0621
+margin_right = 957.102
+margin_bottom = 159.062
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerHealthText" type="Label" parent="BackgroundPanel"]
+margin_left = 17.818
+margin_top = 25.8361
+margin_right = 57.818
+margin_bottom = 39.8361
+text = "Health: 10/10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerManaText" type="Label" parent="BackgroundPanel"]
+margin_left = 134.554
+margin_top = 25.8361
+margin_right = 221.554
+margin_bottom = 39.8361
+text = "Mana: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyHealthText" type="Label" parent="BackgroundPanel"]
+margin_left = 714.34
+margin_top = 28.1747
+margin_right = 840.34
+margin_bottom = 42.1749
+text = "Enemy Health: 0/10"
+__meta__ = {
+"_edit_use_anchors_": false
+}

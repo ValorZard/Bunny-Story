@@ -1,0 +1,46 @@
+[gd_scene format=2]
+
+[node name="TurnSelector" type="Node"]
+
+[node name="BackgroundPanel" type="Panel" parent="."]
+margin_left = 54.0
+margin_top = 182.0
+margin_right = 303.0
+margin_bottom = 312.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttackButton" type="Button" parent="BackgroundPanel"]
+margin_left = 24.0
+margin_top = 27.0
+margin_right = 101.0
+margin_bottom = 57.0
+text = "Attack"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MagicButton" type="Button" parent="BackgroundPanel"]
+margin_left = 138.551
+margin_top = 27.0
+margin_right = 215.551
+margin_bottom = 57.0
+text = "Magic"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DefendButton" type="Button" parent="BackgroundPanel"]
+margin_left = 25.0
+margin_top = 79.0
+margin_right = 99.0
+margin_bottom = 106.0
+text = "Defend"
+
+[node name="SkipButton" type="Button" parent="BackgroundPanel"]
+margin_left = 138.0
+margin_top = 76.0
+margin_right = 217.0
+margin_bottom = 104.0
+text = "Skip"

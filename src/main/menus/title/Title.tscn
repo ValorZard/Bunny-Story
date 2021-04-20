@@ -1,0 +1,183 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/main/menus/title/title.gd" type="Script" id=1]
+
+[node name="Title" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 54.0
+margin_top = 182.0
+margin_right = 287.0
+margin_bottom = 510.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="Panel"]
+margin_left = 24.0
+margin_top = 27.0
+margin_right = 101.0
+margin_bottom = 57.0
+text = "Start New"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContinueButton" type="Button" parent="Panel"]
+margin_left = 138.551
+margin_top = 27.0
+margin_right = 215.551
+margin_bottom = 57.0
+text = "Continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsButton" type="Button" parent="Panel"]
+margin_left = 25.0
+margin_top = 79.0
+margin_right = 99.0
+margin_bottom = 106.0
+text = "Options"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="Button" parent="Panel"]
+margin_left = 138.0
+margin_top = 76.0
+margin_right = 217.0
+margin_bottom = 104.0
+text = "Quit"
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OverworldOverlay" type="Control" parent="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattleMain" type="Control" parent="Control"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattlePanel" type="Panel" parent="Control/BattleMain"]
+margin_left = 52.8252
+margin_top = 11.7986
+margin_right = 946.825
+margin_bottom = 149.799
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerHealthText" type="Label" parent="Control/BattleMain/BattlePanel"]
+margin_left = 17.818
+margin_top = 25.8361
+margin_right = 57.818
+margin_bottom = 39.8361
+text = "Health: 10/10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerManaText" type="Label" parent="Control/BattleMain/BattlePanel"]
+margin_left = 184.416
+margin_top = 24.9452
+margin_right = 263.416
+margin_bottom = 38.9452
+text = "Mana: 10/10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoneyText" type="Label" parent="Control/BattleMain/BattlePanel"]
+margin_left = 327.27
+margin_top = 26.1272
+margin_right = 399.27
+margin_bottom = 40.1272
+text = "Coins: 0"
+
+[node name="LevelText" type="Label" parent="Control/BattleMain/BattlePanel"]
+margin_left = 416.938
+margin_top = 27.071
+margin_right = 488.938
+margin_bottom = 41.071
+text = "Level: 1"
+
+[node name="EnemyHealthText" type="Label" parent="Control/BattleMain/BattlePanel"]
+margin_left = 706.483
+margin_top = 98.8898
+margin_right = 832.483
+margin_bottom = 112.89
+text = "Enemy Health: 0/10"
+
+[node name="CharacterPanel" type="Panel" parent="Control/BattleMain"]
+margin_left = 54.0
+margin_top = 182.0
+margin_right = 303.0
+margin_bottom = 312.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttackButton" type="Button" parent="Control/BattleMain/CharacterPanel"]
+margin_left = 24.0
+margin_top = 27.0
+margin_right = 101.0
+margin_bottom = 57.0
+text = "Attack"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MagicButton" type="Button" parent="Control/BattleMain/CharacterPanel"]
+margin_left = 138.551
+margin_top = 27.0
+margin_right = 215.551
+margin_bottom = 57.0
+text = "Magic"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DefendButton" type="Button" parent="Control/BattleMain/CharacterPanel"]
+margin_left = 25.0
+margin_top = 79.0
+margin_right = 99.0
+margin_bottom = 106.0
+text = "Defend"
+
+[node name="SkipButton" type="Button" parent="Control/BattleMain/CharacterPanel"]
+margin_left = 138.0
+margin_top = 76.0
+margin_right = 217.0
+margin_bottom = 104.0
+text = "Skip"
+
+[node name="Pause" type="Control" parent="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="GameOver" type="Control" parent="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

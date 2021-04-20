@@ -1,0 +1,26 @@
+[gd_scene format=2]
+
+[node name="Info" type="Node"]
+
+[node name="BackgroundPanel" type="Panel" parent="."]
+margin_left = 53.0
+margin_top = 12.0
+margin_right = 947.0
+margin_bottom = 67.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoneyText" type="Label" parent="BackgroundPanel"]
+margin_left = 327.27
+margin_top = 26.1272
+margin_right = 399.27
+margin_bottom = 40.1272
+text = "Coins: 0"
+
+[node name="LevelText" type="Label" parent="BackgroundPanel"]
+margin_left = 416.938
+margin_top = 27.071
+margin_right = 488.938
+margin_bottom = 41.071
+text = "Level: 1"

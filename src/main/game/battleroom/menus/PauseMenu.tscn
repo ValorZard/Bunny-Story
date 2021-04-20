@@ -1,0 +1,29 @@
+[gd_scene format=2]
+
+[node name="Pause" type="Node"]
+
+[node name="BackgroundPanel" type="Panel" parent="."]
+margin_left = 221.878
+margin_top = 62.2449
+margin_right = 772.878
+margin_bottom = 569.245
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContinueText" type="Label" parent="BackgroundPanel"]
+margin_left = 267.78
+margin_top = 99.0872
+margin_right = 339.78
+margin_bottom = 113.087
+text = "Continue"
+
+[node name="QuitText" type="Label" parent="BackgroundPanel"]
+margin_left = 278.937
+margin_top = 280.676
+margin_right = 350.937
+margin_bottom = 294.676
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
