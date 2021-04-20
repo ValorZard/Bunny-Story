@@ -14,7 +14,7 @@ func _ready():
 	pass # Replace with function body.
 
 func update_ui():
-	get_parent().get_node("Control/BattlePanel/EnemyHealthText").text = "Enemy Health: " + str(health) + "/" + str(max_health)
+	get_parent().get_node("BattleMain/BattlePanel/EnemyHealthText").text = "Enemy Health: " + str(health) + "/" + str(max_health)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -22,12 +22,11 @@ func _process(delta):
 
 
 """
-Called when the attack button is pressed.
-Temporarily acts like a Jump Attack.
+Plays the squishing animation.
 """
-func _on_AttackButton_pressed():
+func play_squish_animation():
 	if not $JumpSquish.is_playing():
 		$JumpSquish.queue("JumpSquish")
 		$JumpSquish.queue("JumpUnsquish")
 	
-	get_parent().get_node("Enemy").health -= 5
+	health -= 5

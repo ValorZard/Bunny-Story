@@ -25,10 +25,10 @@ func _ready():
 
 
 func update_ui():
-	get_parent().get_node("Control/BattlePanel/PlayerHealthText").text = "Health: " + str(health) + "/" + str(max_health)
-	get_parent().get_node("Control/BattlePanel/PlayerManaText").text = "Mana: " + str(mana) + "/" + str(max_health)
-	get_parent().get_node("Control/BattlePanel/MoneyText").text = "Coins: " + str(coins)
-	get_parent().get_node("Control/BattlePanel/LevelText").text = "Level: " + str(level)
+	get_parent().get_node("BattleMain/BattlePanel/PlayerHealthText").text = "Health: " + str(health) + "/" + str(max_health)
+	get_parent().get_node("BattleMain/BattlePanel/PlayerManaText").text = "Mana: " + str(mana) + "/" + str(max_health)
+	get_parent().get_node("BattleMain/BattlePanel/MoneyText").text = "Coins: " + str(coins)
+	get_parent().get_node("BattleMain/BattlePanel/LevelText").text = "Level: " + str(level)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -36,10 +36,9 @@ func _process(delta):
 
 
 """
-Called when the attack button is pressed.
-Temporarily acts like a Jump Attack.
+Plays the jumping animation.
 """
-func _on_AttackButton_pressed():
+func play_jump_animation():
 	if not $JumpAnimation.is_playing():
 		$JumpAnimation.queue("WalkUp")
 		$JumpAnimation.queue("JumpOn")
