@@ -14,7 +14,7 @@ func _ready():
 	pass # Replace with function body.
 
 func update_ui():
-	get_parent().get_node("BattleMain/BattlePanel/EnemyHealthText").text = "Enemy Health: " + str(health) + "/" + str(max_health)
+	get_parent().get_node("BattleUI/BattlePanel/EnemyHealthText").text = "Enemy Health: " + str(health) + "/" + str(max_health)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
