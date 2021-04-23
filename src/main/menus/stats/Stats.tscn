@@ -1,6 +1,6 @@
 [gd_scene format=2]
 
-[node name="Info" type="Node"]
+[node name="Stats" type="Node"]
 
 [node name="BackgroundPanel" type="Panel" parent="."]
 margin_left = 53.0

@@ -32,8 +32,8 @@ func _ready():
 func update_ui():
 	get_parent().get_node("UI/HealthManaBar/BackgroundPanel/PlayerHealthText").text = "Health: " + str(health) + "/" + str(max_health)
 	get_parent().get_node("UI/HealthManaBar/BackgroundPanel/PlayerManaText").text = "Mana: " + str(mana) + "/" + str(max_health)
-	get_parent().get_node("UI/Info/BackgroundPanel/MoneyText").text = "Coins: " + str(coins)
-	get_parent().get_node("UI/Info/BackgroundPanel/LevelText").text = "Level: " + str(level)
+	get_parent().get_node("UI/Stats/BackgroundPanel/MoneyText").text = "Coins: " + str(coins)
+	get_parent().get_node("UI/Stats/BackgroundPanel/LevelText").text = "Level: " + str(level)
 
 
 func _process(delta):
