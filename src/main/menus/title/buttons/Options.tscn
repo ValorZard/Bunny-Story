@@ -6,7 +6,6 @@
 
 [node name="Multiplayer" instance=ExtResource( 1 )]
 custom_styles/focus = SubResource( 1 )
-scene_to_load = "res://src/main/menus/multiplayer/Multiplayer.tscn"
 
 [node name="ButtonText" parent="." index="0"]
 text = "Options"

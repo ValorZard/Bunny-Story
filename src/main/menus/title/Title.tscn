@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/resources/fonts/montserrat_20.tres" type="DynamicFont" id=1]
 [ext_resource path="res://src/main/menus/title/TitleText.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/resources/audio/rickroll.wav" type="AudioStream" id=3]
 [ext_resource path="res://src/main/menus/title/buttons/Exit.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/main/menus/title/buttons/Options.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/main/menus/title/buttons/StartGame.tscn" type="PackedScene" id=6]
@@ -61,4 +62,10 @@ custom_fonts/font = ExtResource( 1 )
 text = "Version 0.1.1
 VGDC at UCI"
 
+[node name="Audio" type="Node" parent="."]
+
+[node name="RickRoll" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 3 )
+
+[connection signal="button_down" from="Menu/Buttons/Options" to="." method="_on_options_button_pressed"]
 [connection signal="button_down" from="Menu/Buttons/Exit" to="." method="_on_exit_button_pressed"]
