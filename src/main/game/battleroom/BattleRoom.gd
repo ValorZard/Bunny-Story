@@ -1,8 +1,5 @@
 """
 Description
-
-Contributors:
-	Jacob Singleton - Initial implementation.
 """
 
 

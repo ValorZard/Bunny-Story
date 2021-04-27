@@ -1,16 +1,24 @@
+"""
+Adds functionality for keyboard support in the menu
+and handles button input for the exit button.
+"""
+
+
 extends Control
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+func _ready() -> void:
+	"""
+	Called when the title screen is loaded. Grabs focus of
+	the first button to allow keyboard support.
+	"""
+	
+	$Menu/Buttons/StartGame.grab_focus()
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_exit_button_pressed() -> void:
+	"""
+	Called when the exit button is pressed. Closes the game.
+	"""
+	
+	get_tree().quit()
