@@ -1,6 +1,25 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/main/game/battleroom/BattleRoom.gd" type="Script" id=1]
+[ext_resource path="res://src/resources/fonts/montserrat_20.tres" type="DynamicFont" id=2]
+[ext_resource path="res://src/resources/fonts/montserrat_48.tres" type="DynamicFont" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "CritMove"
+length = 1.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("MovingLine:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 155 ) ]
+}
 
 [node name="BattleRoom" type="Spatial"]
 script = ExtResource( 1 )
@@ -13,5 +32,68 @@ depth = 10.0
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.986182, 0.165667, 0, -0.165667, 0.986182, 0, 2.26039, 5.56684 )
 
-[node name="MinigameTimer" type="Timer" parent="."]
-one_shot = true
+[node name="JumpMinigame" type="Node2D" parent="."]
+position = Vector2( 675, 180 )
+
+[node name="Bar" type="ColorRect" parent="JumpMinigame"]
+margin_right = 40.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MovingLine" type="ColorRect" parent="JumpMinigame"]
+anchor_left = -0.000410587
+anchor_right = -0.000410587
+margin_right = 40.0
+margin_bottom = 5.00017
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CritLine" type="ColorRect" parent="JumpMinigame"]
+margin_top = 155.0
+margin_right = 40.0
+margin_bottom = 160.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CritText" type="Label" parent="JumpMinigame"]
+margin_left = 42.0474
+margin_top = 148.053
+margin_right = 96.0474
+margin_bottom = 169.053
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "< CRIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MovingLineAnimation" type="AnimationPlayer" parent="JumpMinigame"]
+anims/CritMove = SubResource( 1 )
+
+[node name="NormalDamageText" type="Label" parent="JumpMinigame"]
+visible = false
+margin_left = 8.3338
+margin_top = 66.6708
+margin_right = 48.3338
+margin_bottom = 106.671
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.862745, 0.556863, 0.556863, 1 )
+text = "-2"
+
+[node name="CritDamageText" type="Label" parent="JumpMinigame"]
+visible = false
+margin_left = -6.74652
+margin_top = 50.0031
+margin_right = 46.2535
+margin_bottom = 110.003
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "-4"
+
+[connection signal="animation_finished" from="JumpMinigame/MovingLineAnimation" to="." method="_on_jump_minigame_finish"]

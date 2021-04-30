@@ -21,12 +21,16 @@ func _process(delta):
 	update_ui()
 
 
+func add_health(extra_health):
+	health += extra_health
+
+
+func remove_health(minus_health):
+	health -= minus_health
+
+
 """
 Plays the squishing animation.
 """
 func play_squish_animation():
-	if not $JumpSquish.is_playing():
-		$JumpSquish.queue("JumpSquish")
-		$JumpSquish.queue("JumpUnsquish")
-	
-		health -= 5
+	$JumpSquish.queue("JumpSquish")

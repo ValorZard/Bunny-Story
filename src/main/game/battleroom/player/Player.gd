@@ -43,17 +43,27 @@ func _process(delta):
 """
 Plays the jumping animation.
 """
-func play_jump_animation():
-	if not $JumpAnimation.is_playing():
-		$Viewport/Bunny/AnimationPlayer.queue("walk")
-		$JumpAnimation.queue("WalkUp")
-		$Viewport/Bunny/AnimationPlayer.queue("rest")
-		
-		$JumpAnimation.queue("JumpOn")
-		$JumpAnimation.queue("JumpOff")
-		
-		$Viewport/Bunny/AnimationPlayer.queue("walk")
-		$JumpAnimation.queue("WalkBack")
+func play_walk_up():
+	$Viewport/Bunny/AnimationPlayer.queue("walk")
+	$JumpAnimation.queue("WalkUp")
+
+
+func play_jump_minigame_animation():
+	$JumpAnimation.queue("JumpOn")
+	
+	
+func play_crit_jump():
+	$JumpAnimation.queue("CritJump")
+
+
+func play_jump_off():
+	$JumpAnimation.queue("JumpOff")
+
+
+func play_walk_back():
+	$Viewport/Bunny/AnimationPlayer.queue("walk")
+	$JumpAnimation.queue("WalkBack")
+
 
 func raise_shield():
 	$Viewport/Bunny/Shield.set_visible(true)
