@@ -29,4 +29,4 @@ func play_squish_animation():
 		$JumpSquish.queue("JumpSquish")
 		$JumpSquish.queue("JumpUnsquish")
 	
-	health -= 5
+		health -= 5

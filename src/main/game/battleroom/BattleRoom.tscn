@@ -12,3 +12,6 @@ depth = 10.0
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.986182, 0.165667, 0, -0.165667, 0.986182, 0, 2.26039, 5.56684 )
+
+[node name="MinigameTimer" type="Timer" parent="."]
+one_shot = true
