@@ -6,9 +6,9 @@
 script = ExtResource( 1 )
 
 [node name="CSGBox" type="CSGBox" parent="."]
-width = 7.5
+width = 20.0
 height = 0.05
-depth = 7.5
+depth = 10.0
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.986182, 0.165667, 0, -0.165667, 0.986182, 0, 2.26039, 5.56684 )
